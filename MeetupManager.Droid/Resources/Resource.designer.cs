@@ -27,11 +27,15 @@ namespace MeetupManager.Droid
 		public static void UpdateIdValues()
 		{
 			global::ModernHttpClient.Resource.String.library_name = global::MeetupManager.Droid.Resource.String.library_name;
+			global::PCLCrypto.Resource.String.ApplicationName = global::MeetupManager.Droid.Resource.String.ApplicationName;
+			global::PCLCrypto.Resource.String.Hello = global::MeetupManager.Droid.Resource.String.Hello;
 			global::Xamarin.Auth.Resource.Animation.slide_in_right = global::MeetupManager.Droid.Resource.Animation.slide_in_right;
 			global::Xamarin.Auth.Resource.Animation.slide_out_left = global::MeetupManager.Droid.Resource.Animation.slide_out_left;
 			global::Xamarin.Auth.Resource.Drawable.ic_arrow_back = global::MeetupManager.Droid.Resource.Drawable.ic_arrow_back;
 			global::Xamarin.Auth.Resource.Id.webview = global::MeetupManager.Droid.Resource.Id.webview;
 			global::Xamarin.Auth.Resource.Layout.activity_webview = global::MeetupManager.Droid.Resource.Layout.activity_webview;
+			global::Xamarin.Auth.Resource.String.ApplicationName = global::MeetupManager.Droid.Resource.String.ApplicationName;
+			global::Xamarin.Auth.Resource.String.Hello = global::MeetupManager.Droid.Resource.String.Hello;
 			global::Xamarin.Auth.Resource.String.library_name = global::MeetupManager.Droid.Resource.String.library_name;
 			global::Xamarin.Auth.Resource.String.title_activity_webview = global::MeetupManager.Droid.Resource.String.title_activity_webview;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::MeetupManager.Droid.Resource.Attribute.actionBarSize;
@@ -3708,6 +3712,12 @@ namespace MeetupManager.Droid
 		public partial class String
 		{
 			
+			// aapt resource value: 0x7f080040
+			public const int ApplicationName = 2131230784;
+			
+			// aapt resource value: 0x7f08003f
+			public const int Hello = 2131230783;
+			
 			// aapt resource value: 0x7f080016
 			public const int abc_action_bar_home_description = 2131230742;
 			
@@ -3801,11 +3811,11 @@ namespace MeetupManager.Droid
 			// aapt resource value: 0x7f080028
 			public const int abc_toolbar_collapse_description = 2131230760;
 			
-			// aapt resource value: 0x7f080047
-			public const int about = 2131230791;
+			// aapt resource value: 0x7f080049
+			public const int about = 2131230793;
 			
-			// aapt resource value: 0x7f080041
-			public const int app_name = 2131230785;
+			// aapt resource value: 0x7f080043
+			public const int app_name = 2131230787;
 			
 			// aapt resource value: 0x7f080037
 			public const int appbar_scrolling_view_behavior = 2131230775;
@@ -3813,50 +3823,50 @@ namespace MeetupManager.Droid
 			// aapt resource value: 0x7f080038
 			public const int bottom_sheet_behavior = 2131230776;
 			
-			// aapt resource value: 0x7f08004d
-			public const int cancel = 2131230797;
+			// aapt resource value: 0x7f08004f
+			public const int cancel = 2131230799;
 			
 			// aapt resource value: 0x7f080039
 			public const int character_counter_pattern = 2131230777;
 			
-			// aapt resource value: 0x7f080040
-			public const int hello = 2131230784;
+			// aapt resource value: 0x7f080042
+			public const int hello = 2131230786;
 			
-			// aapt resource value: 0x7f08003f
-			public const int library_name = 2131230783;
+			// aapt resource value: 0x7f080041
+			public const int library_name = 2131230785;
 			
-			// aapt resource value: 0x7f080052
-			public const int limit_events = 2131230802;
+			// aapt resource value: 0x7f080054
+			public const int limit_events = 2131230804;
+			
+			// aapt resource value: 0x7f08004c
+			public const int logging_in = 2131230796;
 			
 			// aapt resource value: 0x7f08004a
-			public const int logging_in = 2131230794;
+			public const int login = 2131230794;
+			
+			// aapt resource value: 0x7f08004b
+			public const int login_details = 2131230795;
 			
 			// aapt resource value: 0x7f080048
-			public const int login = 2131230792;
+			public const int menu_about = 2131230792;
 			
-			// aapt resource value: 0x7f080049
-			public const int login_details = 2131230793;
+			// aapt resource value: 0x7f080052
+			public const int menu_add_new_member = 2131230802;
 			
 			// aapt resource value: 0x7f080046
-			public const int menu_about = 2131230790;
+			public const int menu_refresh = 2131230790;
 			
-			// aapt resource value: 0x7f080050
-			public const int menu_add_new_member = 2131230800;
-			
-			// aapt resource value: 0x7f080044
-			public const int menu_refresh = 2131230788;
+			// aapt resource value: 0x7f080047
+			public const int menu_refresh_login = 2131230791;
 			
 			// aapt resource value: 0x7f080045
-			public const int menu_refresh_login = 2131230789;
+			public const int menu_select_winner = 2131230789;
 			
-			// aapt resource value: 0x7f080043
-			public const int menu_select_winner = 2131230787;
+			// aapt resource value: 0x7f080044
+			public const int menu_settings = 2131230788;
 			
-			// aapt resource value: 0x7f080042
-			public const int menu_settings = 2131230786;
-			
-			// aapt resource value: 0x7f080053
-			public const int menu_stats = 2131230803;
+			// aapt resource value: 0x7f080055
+			public const int menu_stats = 2131230805;
 			
 			// aapt resource value: 0x7f080001
 			public const int mr_button_content_description = 2131230721;
@@ -3921,11 +3931,11 @@ namespace MeetupManager.Droid
 			// aapt resource value: 0x7f080014
 			public const int mr_user_route_category_name = 2131230740;
 			
-			// aapt resource value: 0x7f08004e
-			public const int new_member = 2131230798;
+			// aapt resource value: 0x7f080050
+			public const int new_member = 2131230800;
 			
-			// aapt resource value: 0x7f08004c
-			public const int ok = 2131230796;
+			// aapt resource value: 0x7f08004e
+			public const int ok = 2131230798;
 			
 			// aapt resource value: 0x7f08003a
 			public const int password_toggle_content_description = 2131230778;
@@ -3942,20 +3952,20 @@ namespace MeetupManager.Droid
 			// aapt resource value: 0x7f08003e
 			public const int path_password_strike_through = 2131230782;
 			
-			// aapt resource value: 0x7f08004f
-			public const int popup_name = 2131230799;
+			// aapt resource value: 0x7f080051
+			public const int popup_name = 2131230801;
 			
 			// aapt resource value: 0x7f080029
 			public const int search_menu_title = 2131230761;
 			
-			// aapt resource value: 0x7f080051
-			public const int show_all_events = 2131230801;
+			// aapt resource value: 0x7f080053
+			public const int show_all_events = 2131230803;
 			
 			// aapt resource value: 0x7f08002a
 			public const int status_bar_notification_info_overflow = 2131230762;
 			
-			// aapt resource value: 0x7f08004b
-			public const int tap_to_login = 2131230795;
+			// aapt resource value: 0x7f08004d
+			public const int tap_to_login = 2131230797;
 			
 			// aapt resource value: 0x7f080000
 			public const int title_activity_webview = 2131230720;

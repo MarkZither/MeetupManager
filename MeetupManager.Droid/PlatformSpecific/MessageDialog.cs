@@ -99,7 +99,9 @@ namespace MeetupManager.Droid.PlatformSpecific
                 {
 
                     if (string.IsNullOrWhiteSpace(textBoxName.Text))
+                    {
                         return;
+                    }
 
                     returnString(textBoxName.Text.Trim());
                 });

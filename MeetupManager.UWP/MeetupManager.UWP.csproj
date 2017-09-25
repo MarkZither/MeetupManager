@@ -109,6 +109,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ic_action_navigation_arrow_forward.png" />
+    <Content Include="ic_action_settings.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -135,6 +137,9 @@
     <PackageReference Include="Newtonsoft.Json">
       <Version>10.0.3</Version>
     </PackageReference>
+    <PackageReference Include="PCLCrypto">
+      <Version>2.0.147</Version>
+    </PackageReference>
     <PackageReference Include="SQLitePCL.raw_basic">
       <Version>0.8.6</Version>
     </PackageReference>
@@ -154,7 +159,7 @@
       <Version>1.8.1</Version>
     </PackageReference>
     <PackageReference Include="Xam.Plugins.Settings">
-      <Version>3.1.0-beta103</Version>
+      <Version>3.0.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Auth">
       <Version>1.5.0.3</Version>
@@ -164,16 +169,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MeetupManager.Portable\MeetupManager.Portable.csproj">
-      <Project>{9189a7f8-9c9c-427d-9777-aa6b8cd7df20}</Project>
+    <ProjectReference Include="..\MeetupManager.Core\MeetupManager.Portable.csproj">
+      <Project>{96fd2127-6ee7-4ad7-abfd-4dd90428f480}</Project>
       <Name>MeetupManager.Portable</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="SQLite-net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\MeetupManager.Portable\bin\Debug\SQLite-net.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
