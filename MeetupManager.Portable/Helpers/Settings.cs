@@ -1,7 +1,7 @@
 ﻿
 using System;
-using Refractored.Xam.Settings.Abstractions;
-using Refractored.Xam.Settings;
+using Plugin.Settings.Abstractions;
+using Plugin.Settings;
 
 namespace MeetupManager.Portable.Helpers
 {
@@ -58,11 +58,11 @@ namespace MeetupManager.Portable.Helpers
         {
             get
             {
-                return AppSettings.GetValueOrDefault<string>(AccessTokenKey, AccessTokenDefault);
+                return AppSettings.GetValueOrDefault(AccessTokenKey, AccessTokenDefault);
             }
             set
             {
-               AppSettings.AddOrUpdateValue<string>(AccessTokenKey, value);
+               AppSettings.AddOrUpdateValue(AccessTokenKey, value);
             }
         }
 
@@ -70,11 +70,11 @@ namespace MeetupManager.Portable.Helpers
 		{
 			get
 			{
-                return AppSettings.GetValueOrDefault<string>(RefreshTokenKey, RefreshTokenDefault);
+                return AppSettings.GetValueOrDefault(RefreshTokenKey, RefreshTokenDefault);
 			}
 			set
 			{
-				AppSettings.AddOrUpdateValue<string>(RefreshTokenKey, value);
+				AppSettings.AddOrUpdateValue(RefreshTokenKey, value);
 			}
 		}
 
@@ -83,11 +83,11 @@ namespace MeetupManager.Portable.Helpers
 		{
 			get
 			{
-                return AppSettings.GetValueOrDefault<bool>(InsightsKey, InsightsDefault);
+                return AppSettings.GetValueOrDefault(InsightsKey, InsightsDefault);
 			}
 			set
 			{
-				AppSettings.AddOrUpdateValue<bool>(InsightsKey, value);
+				AppSettings.AddOrUpdateValue(InsightsKey, value);
 			}
 		}
 
@@ -95,11 +95,11 @@ namespace MeetupManager.Portable.Helpers
         {
             get
             {
-                return AppSettings.GetValueOrDefault<bool>(ShowAllEventsKey, ShowAllEventsDefault);
+                return AppSettings.GetValueOrDefault(ShowAllEventsKey, ShowAllEventsDefault);
             }
             set
             {
-                AppSettings.AddOrUpdateValue<bool>(ShowAllEventsKey, value);
+                AppSettings.AddOrUpdateValue(ShowAllEventsKey, value);
             }
         }
 
@@ -107,11 +107,11 @@ namespace MeetupManager.Portable.Helpers
         {
             get
             {
-                return AppSettings.GetValueOrDefault<string>(UserIdKey, UserIdDefault);
+                return AppSettings.GetValueOrDefault(UserIdKey, UserIdDefault);
             }
             set
             {
-                AppSettings.AddOrUpdateValue<string>(UserIdKey, value);
+                AppSettings.AddOrUpdateValue(UserIdKey, value);
             }
         }
 
@@ -120,11 +120,11 @@ namespace MeetupManager.Portable.Helpers
         {
             get
             {
-                return AppSettings.GetValueOrDefault<string>(UserNameKey, UserNameDefault);
+                return AppSettings.GetValueOrDefault(UserNameKey, UserNameDefault);
             }
             set
             {
-                AppSettings.AddOrUpdateValue<string>(UserNameKey, value);
+                AppSettings.AddOrUpdateValue(UserNameKey, value);
             }
         }
 
@@ -132,11 +132,11 @@ namespace MeetupManager.Portable.Helpers
 		{
 			get
 			{
-                return AppSettings.GetValueOrDefault<long>(KeyValidUntilKey, KeyValidUntilDefault);
+                return AppSettings.GetValueOrDefault(KeyValidUntilKey, KeyValidUntilDefault);
 			}
 			set
 			{
-				AppSettings.AddOrUpdateValue<long>(KeyValidUntilKey, value);
+				AppSettings.AddOrUpdateValue(KeyValidUntilKey, value);
 			}
 		}
 
@@ -144,11 +144,11 @@ namespace MeetupManager.Portable.Helpers
 		{
 			get
 			{
-                return AppSettings.GetValueOrDefault<bool>(OrganizerModeKey, OrganizerModeDefault);
+                return AppSettings.GetValueOrDefault(OrganizerModeKey, OrganizerModeDefault);
 			}
 			set
 			{
-                AppSettings.AddOrUpdateValue<bool>(OrganizerModeKey, value);
+                AppSettings.AddOrUpdateValue(OrganizerModeKey, value);
 			}
 		}
 

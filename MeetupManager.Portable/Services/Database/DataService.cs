@@ -72,8 +72,10 @@ namespace MeetupManager.Portable.Services.Database
       return Task.Factory.StartNew(() =>
       {
         var item = database.GetEventRSVP(eventId, userId);
-        if (item != null)
-          database.DeleteItem<EventRSVP>(item);
+          if (item != null)
+          {
+              database.DeleteItem<EventRSVP>(item);
+          }
       });
     }
     #endregion

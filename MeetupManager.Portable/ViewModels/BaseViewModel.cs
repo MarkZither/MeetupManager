@@ -34,8 +34,10 @@ namespace MeetupManager.Portable.ViewModels
 			get { return isBusy; }
 			set { 
                 SetProperty(ref isBusy, value);
-				if (IsBusyChanged != null)
-					IsBusyChanged (isBusy);
+                if (IsBusyChanged != null)
+                {
+                    IsBusyChanged(isBusy);
+                }
 			}
 		}
 
@@ -67,8 +69,10 @@ namespace MeetupManager.Portable.ViewModels
             get {
                 return new Command(async () => 
                     {
-                        if(IsBusy)
+                        if (IsBusy)
+                        {
                             return;
+                        }
                         await page.Navigation.PushAsync(new AboutView());
                     });
             }
@@ -78,17 +82,21 @@ namespace MeetupManager.Portable.ViewModels
         protected void SetProperty<T>(
             ref T backingStore, T value,
             [CallerMemberName]string propertyName = "",
-            Action onChanged = null) 
+            Action onChanged = null)
         {
 
 
-            if (EqualityComparer<T>.Default.Equals(backingStore, value)) 
+            if (EqualityComparer<T>.Default.Equals(backingStore, value))
+            {
                 return;
+            }
 
             backingStore = value;
 
-            if (onChanged != null) 
+            if (onChanged != null)
+            {
                 onChanged();
+            }
 
             OnPropertyChanged(propertyName);
         }
@@ -100,7 +108,9 @@ namespace MeetupManager.Portable.ViewModels
         public void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged == null)
+            {
                 return;
+            }
 
             PropertyChanged (this, new PropertyChangedEventArgs (propertyName));
         }

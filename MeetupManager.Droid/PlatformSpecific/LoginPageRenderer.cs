@@ -22,13 +22,17 @@ namespace MeetupManager.Droid.PlatformSpecific
             base.OnElementChanged (e);
 
             if (e.OldElement != null || Element == null)
+            {
                 return;
+            }
 
 
             page = e.NewElement as LoginPage;
 
             if (page == null || loginInProgress)
+            {
                 return;
+            }
 
             loginInProgress = true;
             try

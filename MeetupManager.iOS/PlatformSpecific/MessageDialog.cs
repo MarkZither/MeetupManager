@@ -50,8 +50,10 @@ namespace MeetupManager.iOS.PlatformSpecific
 			alertView.AlertViewStyle = UIAlertViewStyle.PlainTextInput;
 			alertView.Clicked += (sender, e) => {
 				var text = alertView.GetTextField(0).Text.Trim();
-				if(e.ButtonIndex == 0 && !string.IsNullOrWhiteSpace(text))
-					returnString (text);
+                if (e.ButtonIndex == 0 && !string.IsNullOrWhiteSpace(text))
+                {
+                    returnString(text);
+                }
 			};
 			alertView.Show ();
 		});

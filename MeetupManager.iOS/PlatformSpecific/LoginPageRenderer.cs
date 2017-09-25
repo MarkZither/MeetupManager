@@ -23,7 +23,9 @@ namespace MeetupManager.iOS.PlatformSpecific
             base.OnElementChanged (e);
 
             if (e.OldElement != null || Element == null)
+            {
                 return;
+            }
 
             page = e.NewElement as LoginPage;
 
@@ -34,7 +36,9 @@ namespace MeetupManager.iOS.PlatformSpecific
         {
             base.ViewDidLoad ();
             if (page == null)
+            {
                 return;
+            }
 
             this.View.BackgroundColor = UIColor.FromRGBA (0, 0, 0, 0);
         }
@@ -47,7 +51,9 @@ namespace MeetupManager.iOS.PlatformSpecific
 
 
             if (page == null || loginInProgress)
+            {
                 return;
+            }
 
             loginInProgress = true;
             try
@@ -55,7 +61,7 @@ namespace MeetupManager.iOS.PlatformSpecific
                 var auth = new OAuth2Authenticator(MeetupService.ClientId, MeetupService.ClientSecret, string.Empty, new Uri(MeetupService.AuthorizeUrl), new Uri(MeetupService.RedirectUrl), new Uri(MeetupService.AccessTokenUrl));
 
                 auth.AllowCancel = true;
-                auth.ShowUIErrors = false;
+                auth.ShowErrors = false;
                 // If authorization succeeds or is canceled, .Completed will be fired.
                 auth.Completed += async (s, ee) => {
                     await DismissViewControllerAsync (true);

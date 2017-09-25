@@ -29,7 +29,9 @@ namespace MeetupManager.Portable.ViewModels
         async void ExecuteRefreshLoginCommand()
         {
             if (IsBusy)
+            {
                 return;
+            }
 
             if (DateTime.UtcNow.Ticks < Settings.KeyValidUntil)
             {
@@ -93,7 +95,9 @@ namespace MeetupManager.Portable.ViewModels
                 catch (Exception ex)
                 {
                     if (Settings.Insights)
+                    {
                         Xamarin.Insights.Report(ex);
+                    }
                 }
 
                 IsBusy = false;

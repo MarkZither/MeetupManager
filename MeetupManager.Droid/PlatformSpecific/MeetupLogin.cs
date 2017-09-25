@@ -27,7 +27,9 @@ namespace MeetupManager.Droid.PlatformSpecific
             auth.Completed += (s, ee) =>
             {
                 if (loginCallback != null)
-                    loginCallback(ee.IsAuthenticated, ee.Account == null ? null :ee.Account.Properties);
+                {
+                    loginCallback(ee.IsAuthenticated, ee.Account == null ? null : ee.Account.Properties);
+                }
             };
             
 

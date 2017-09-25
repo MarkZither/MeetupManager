@@ -22,12 +22,14 @@ namespace MeetupManager.iOS.PlatformSpecific
 			var auth = new OAuth2Authenticator(MeetupService.ClientId, MeetupService.ClientSecret, string.Empty, new Uri(MeetupService.AuthorizeUrl), new Uri(MeetupService.RedirectUrl), new Uri(MeetupService.AccessTokenUrl));
 
 			auth.AllowCancel = true;
-            auth.ShowUIErrors = false;
+            auth.ShowErrors = false;
 			// If authorization succeeds or is canceled, .Completed will be fired.
 			auth.Completed += (s, ee) => {
 				vc.DismissViewController (true, null);
-				if (loginCallback != null)
-					loginCallback (ee.IsAuthenticated, ee.Account == null ? null : ee.Account.Properties);
+                if (loginCallback != null)
+                {
+                    loginCallback(ee.IsAuthenticated, ee.Account == null ? null : ee.Account.Properties);
+                }
 			};
 
             auth.Error += (sender, e) =>
