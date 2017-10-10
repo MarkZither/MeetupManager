@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 using MeetupManager.Portable.ViewModels;
+using System.Diagnostics;
+using Xamarin.Auth;
+using MeetupManager.Portable.Services;
+using MeetupManager.Portable.Helpers;
 
 namespace MeetupManager.Portable.Views
 {
@@ -31,7 +35,6 @@ namespace MeetupManager.Portable.Views
                 Order = ToolbarItemOrder.Primary,
                 Command = viewModel.RefreshLoginCommand
             });
-
         }
 
         protected override void OnAppearing()

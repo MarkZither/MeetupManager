@@ -17,6 +17,7 @@ using Xamarin.Forms;
 using ImageCircle.Forms.Plugin.Droid;
 using Android.Content.PM;
 using MeetupManager.Portable.Models.Database;
+using MeetupManager.Portable.ViewModels;
 
 namespace MeetupManager.Droid
 {
@@ -30,9 +31,9 @@ namespace MeetupManager.Droid
 
 
             Forms.Init (this, bundle);
+            global::Xamarin.Auth.Presenters.XamarinAndroid.AuthenticationConfiguration.Init(this, bundle);
 
-
-            #if DEBUG
+#if DEBUG
             Xamarin.Insights.Initialize(Xamarin.Insights.DebugModeKey, this);
             #else
             Xamarin.Insights.Initialize(Xamarin.Insights.DebugModeKey, this);
@@ -54,6 +55,28 @@ namespace MeetupManager.Droid
             ImageCircleRenderer.Init();
             //new Syncfusion.SfChart.XForms.Droid.SfChartRenderer();
             ActionBar.SetIcon ( new ColorDrawable (Resources.GetColor (Android.Resource.Color.Transparent)));
+        }
+    }
+
+    [Activity(Label = "CustomUrlSchemeInterceptorActivity", NoHistory = true, LaunchMode = LaunchMode.SingleTop)]
+    [IntentFilter(
+    new[] { Intent.ActionView },
+    Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable },
+    DataSchemes = new[] { "zithertidyhq" },
+    DataPath = "/oauth2redirect")]
+    public class CustomUrlSchemeInterceptorActivity : Activity
+    {
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+
+            // Convert Android.Net.Url to Uri
+            var uri = new Uri(Intent.Data.ToString());
+
+            // Load redirectUrl page
+            MeetupManager.Portable.Helpers.AuthenticationState.Authenticator.OnPageLoading(uri);
+            
+            Finish();
         }
     }
 }

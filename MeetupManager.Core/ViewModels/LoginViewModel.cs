@@ -7,6 +7,9 @@ using Xamarin.Forms;
 using MeetupManager.Portable.Views;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Xamarin.Auth;
+using MeetupManager.Portable.Services;
+using System.Diagnostics;
 
 namespace MeetupManager.Portable.ViewModels
 {
@@ -77,10 +80,10 @@ namespace MeetupManager.Portable.ViewModels
             if (success)
             {
                 Settings.AccessToken = properties["access_token"];
-                Settings.RefreshToken = properties["refresh_token"];
+                //Settings.RefreshToken = properties["refresh_token"];
 
-                long time;
-                long.TryParse(properties["expires_in"], out time);
+                long time = 36000;
+                //long.TryParse(properties["expires_in"], out time);
                 var nextTime = DateTime.UtcNow.AddSeconds(time).Ticks;
                 Settings.KeyValidUntil = nextTime;
 
@@ -88,9 +91,8 @@ namespace MeetupManager.Portable.ViewModels
                 try
                 {
                     var user = await meetupService.GetCurrentMember();
-                    Settings.UserId = user.Id.ToString();
-                    Settings.UserName = user.Name ?? string.Empty;
-
+                    Settings.UserId = user.id.ToString();
+                    Settings.UserName = user.nick_name ?? string.Empty;
                 }
                 catch (Exception ex)
                 {
@@ -133,6 +135,7 @@ namespace MeetupManager.Portable.ViewModels
                 await FinishLogin(success, properties));
             }
         }
+
 
     }
 }

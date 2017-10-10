@@ -63,8 +63,9 @@ namespace MeetupManager.Portable.Mock
 		{
 			return new LoggedInUser
 			{
-			    Name = "James Montemagno",
-                Id = 1
+			    first_name = "James",
+                last_name = "montemagno",
+                id = 1
 			};
 		}
 		#endregion

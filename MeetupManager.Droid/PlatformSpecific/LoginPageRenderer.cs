@@ -6,6 +6,7 @@ using Xamarin.Forms.Platform.Android;
 using Xamarin.Auth;
 using MeetupManager.Portable.Services;
 using Android.App;
+using MeetupManager.Portable.Helpers;
 
 [assembly:ExportRenderer(typeof(LoginPage), typeof(LoginPageRenderer))]
 namespace MeetupManager.Droid.PlatformSpecific
@@ -37,7 +38,9 @@ namespace MeetupManager.Droid.PlatformSpecific
             loginInProgress = true;
             try
             {
-                var auth = new OAuth2Authenticator(MeetupService.ClientId, MeetupService.ClientSecret, string.Empty, new Uri(MeetupService.AuthorizeUrl), new Uri(MeetupService.RedirectUrl), new Uri(MeetupService.AccessTokenUrl));
+                var auth = new OAuth2Authenticator2(MeetupService.ClientId, MeetupService.ClientSecret
+                    , string.Empty, new Uri(MeetupService.AuthorizeUrl), new Uri(MeetupService.RedirectUrl)
+                    , new Uri(MeetupService.AccessTokenUrl), null, true);
 
                 auth.AllowCancel = true;
                 // If authorization succeeds or is canceled, .Completed will be fired.
@@ -50,10 +53,12 @@ namespace MeetupManager.Droid.PlatformSpecific
 
                 auth.Error += async (s, ee) => 
                     {
-                        //await page.Navigation.PopAsync ();  
-                        //await page.ViewModel.FinishLogin(false, null);
-                        //loginInProgress = false;
+                        await page.Navigation.PopAsync ();  
+                        await page.ViewModel.FinishLogin(false, null);
+                        loginInProgress = false;
                     };
+
+                AuthenticationState.Authenticator = auth;
                 var activity = Xamarin.Forms.Forms.Context as Activity;
                 activity.StartActivity (auth.GetUI (Xamarin.Forms.Forms.Context));
             }
@@ -63,8 +68,6 @@ namespace MeetupManager.Droid.PlatformSpecific
                 await page.ViewModel.FinishLogin(false, null);
                 loginInProgress = false;
             }
-
-
         }
     }
 }

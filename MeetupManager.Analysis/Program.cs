@@ -23,7 +23,7 @@ namespace MeetupManager.Analysis
 					Name = "Android",
 					ProjectFiles = new List<string> {
 						Path.Combine(path, "MeetupManager.Droid/MeetupManager.Droid.csproj"),
-						Path.Combine(path, "MeetupManager.Portable/MeetupManager.Portable.csproj")
+						Path.Combine(path, "MeetupManager.Core/MeetupManager.Portable.csproj")
 					},
 				},
 
@@ -31,15 +31,15 @@ namespace MeetupManager.Analysis
 					Name = "iOS",
 					ProjectFiles = new List<string> {
 						Path.Combine(path, "MeetupManager.iOS/MeetupManager.iOS.csproj"),
-						Path.Combine(path, "MeetupManager.Portable/MeetupManager.Portable.csproj")
+						Path.Combine(path, "MeetupManager.Core/MeetupManager.Portable.csproj")
 					},
 				},
 
                 new Solution {
 					Name = "WP",
 					ProjectFiles = new List<string> {
-						Path.Combine(path, "MeetupManager.WP8/MeetupManager.WP8.csproj"),
-						Path.Combine(path, "MeetupManager.Portable/MeetupManager.Portable.csproj")
+						Path.Combine(path, "MeetupManager.UWP/MeetupManager.UWP.csproj"),
+						Path.Combine(path, "MeetupManager.Core/MeetupManager.Portable.csproj")
 					},
 				},
 

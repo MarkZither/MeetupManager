@@ -7,6 +7,7 @@ using Xamarin.Auth;
 using Android.App;
 using Xamarin.Forms;
 using MeetupManager.Droid.PlatformSpecific;
+using MeetupManager.Portable.Helpers;
 
 [assembly:Dependency(typeof(MeetupLogin))]
 namespace MeetupManager.Droid.PlatformSpecific
@@ -15,7 +16,9 @@ namespace MeetupManager.Droid.PlatformSpecific
     {
         #region ILogin implementation
 
-        readonly OAuth2Authenticator auth = new OAuth2Authenticator(MeetupService.ClientId, MeetupService.ClientSecret, string.Empty, new Uri(MeetupService.AuthorizeUrl), new Uri(MeetupService.RedirectUrl), new Uri(MeetupService.AccessTokenUrl));
+        readonly OAuth2Authenticator2 auth = new OAuth2Authenticator2(MeetupService.ClientId, MeetupService.ClientSecret
+            , string.Empty, new Uri(MeetupService.AuthorizeUrl), new Uri(MeetupService.RedirectUrl)
+            , new Uri(MeetupService.AccessTokenUrl), null, true);
 
         public void LoginAsync(Action<bool, Dictionary<string, string>> loginCallback)
         {
@@ -31,16 +34,12 @@ namespace MeetupManager.Droid.PlatformSpecific
                     loginCallback(ee.IsAuthenticated, ee.Account == null ? null : ee.Account.Properties);
                 }
             };
-            
 
+            AuthenticationState.Authenticator = auth;
             var intent = auth.GetUI(activity);
             activity.StartActivity(intent);
         }
-
-
         #endregion
-
-
     }
 }
 

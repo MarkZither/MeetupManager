@@ -12,11 +12,13 @@ namespace MeetupManager.Portable.Views
     {
         EventsViewModel viewModel;
         bool allEvents;
+
         public EventsView(Group @group)
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new EventsViewModel(this, @group);
+            //BindingContext = viewModel = new EventsViewModel(this, @group);
+            BindingContext = viewModel = new EventsViewModel(this, new Group() { Id = 1, Name = "test" });
             allEvents = Settings.ShowAllEvents;
             ToolbarItems.Add(new ToolbarItem
             {
